@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/rbenv.yml
+
+  roles:
+    - ANXS.utilities
+    - pablocrivella.nodejs
+    - pablocrivella.rbenv
+
+  post_tasks:
+    - include: tasks/install_gem_dependencies.yml

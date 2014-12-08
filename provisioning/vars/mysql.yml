@@ -1,0 +1,6 @@
+---
+mysql_root_password: "{{ lookup('env', 'mysql_root_passwd') }}"
+mysql_users:
+  - name: developer
+    pass: "{{ lookup('env', 'mysql_developer_passwd') }}"
+    host: "%"

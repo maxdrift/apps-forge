@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/redis.yml
+    - vars/mysql.yml
+    - vars/postgresql.yml
+
+  roles:
+    - ANXS.utilities
+    - DavidWittman.redis
+    - ANXS.mysql
+    - ANXS.postgresql
