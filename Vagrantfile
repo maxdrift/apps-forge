@@ -71,9 +71,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :hostmanager
 
-  config.trigger.before :provision, stdout: true do
-    info 'Installing Ansible Roles'
+  [:up, :provision].each do |command|
+    config.trigger.before command, stdout: true do
+      any_roles = Pathname.new('./provisioning/roles/').children.any?(&:directory?)
 
-    run 'provisioning/./install-roles.sh'
+      if (!any_roles && command  == :up) || command == :provision
+        info 'Installing Ansible Roles'
+        run 'provisioning/./install-roles.sh'
+      end
+    end
   end
 end
