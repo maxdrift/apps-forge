@@ -39,6 +39,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ruby: 'ubuntu/trusty32'
   }
 
+  config.vm.provision :hostmanager
+
+  config.vm.provision :trigger, stdout: true do |trigger|
+    trigger.fire do
+      info 'Installing Ansible Roles'
+      run 'provisioning/./install-roles.sh'
+    end
+  end
+
   config.user.each do |node_id, node_config|
     config.vm.define node_id do |node|
       node.vm.box = boxes[node_id]
@@ -65,19 +74,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       node.vm.provision :ansible do |ansible|
         ansible.playbook = "provisioning/#{node_id}.yml"
-      end
-    end
-  end
-
-  config.vm.provision :hostmanager
-
-  [:up, :provision].each do |command|
-    config.trigger.before command, stdout: true do
-      any_roles = Pathname.new('./provisioning/roles/').children.any?(&:directory?)
-
-      if (!any_roles && command  == :up) || command == :provision
-        info 'Installing Ansible Roles'
-        run 'provisioning/./install-roles.sh'
       end
     end
   end
