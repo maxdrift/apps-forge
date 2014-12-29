@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Pablo Crivella
+  company: NobelBiz
+  description: "Install nodejs from package"
+  min_ansible_version: 1.4
+  license: MIT
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  categories:
+  - system
+  - development
+
+dependencies: []

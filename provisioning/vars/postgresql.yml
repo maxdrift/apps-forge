@@ -1,0 +1,5 @@
+---
+postgresql_version: 9.3
+postgresql_users:
+  - name: developer
+    pass: "{{ lookup('env', 'postgresql_developer_passwd') }}"

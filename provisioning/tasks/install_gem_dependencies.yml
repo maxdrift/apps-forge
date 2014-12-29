@@ -1,0 +1,10 @@
+---
+- name: install gem dependencies
+  apt: pkg={{ item }} state=latest install_recommends=no
+  with_items:
+    - libmysql++-dev
+    - libmysqlclient-dev
+    - libpq-dev
+    - libsqlite3-dev
+    - libqtwebkit-dev
+    - libqt4-dev
