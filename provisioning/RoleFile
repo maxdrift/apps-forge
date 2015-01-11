@@ -1,5 +1,5 @@
 pablocrivella.rbenv
 ANXS.mysql
-ANXS.postgresql
+ANXS.postgresql,v1.0.3
 ANXS.utilities
 DavidWittman.redis
