@@ -5,7 +5,7 @@ rbenv:
   global: 2.1.5
   rubies:
     - 2.1.5
-    - 2.2.2
+    - 2.2.0
 
 rbenv_users:
   - name: vagrant
