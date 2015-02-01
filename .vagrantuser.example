@@ -1,7 +1,10 @@
 ---
 :ruby:
+  :debug: true
   :folders:
     -
       :host: /home/user/ruby-projects/
       :guest: /home/vagrant/projects/
   :memory: 1024
+:db:
+  :debug: true

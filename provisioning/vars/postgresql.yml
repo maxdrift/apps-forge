@@ -1,5 +1,20 @@
 ---
 postgresql_version: 9.3
+
 postgresql_users:
   - name: developer
     pass: "{{ lookup('env', 'postgresql_developer_passwd') }}"
+
+postgresql_user_privileges:
+  - name: developer
+    db: postgres
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"
+
+postgresql_pg_hba_trust_hosts:
+  - ruby-devbox.local
+
+postgresql_listen_addresses:
+  - '*'
+
+postgresql_ext_install_contrib: yes
