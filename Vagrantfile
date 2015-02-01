@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.user.defaults = {
     db: {
+      debug: false,
       folders: [],
       ports: [],
       networks: {
@@ -22,6 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       memory: 512
     },
     ruby: {
+      debug: false,
       folders: [],
       ports: [],
       networks: {
@@ -74,6 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       node.vm.provision :ansible do |ansible|
         ansible.playbook = "provisioning/#{node_id}.yml"
+        ansible.verbose  = 'vvv' if node_config.debug == true
       end
     end
   end
