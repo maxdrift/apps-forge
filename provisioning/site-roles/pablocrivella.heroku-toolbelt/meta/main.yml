@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  author: Pablo Crivella
+  description: Role to install heroku toolbelt and plugins.
+  company: NobelBiz
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - quantal
+        - raring
+        - saucy
+        - trusty
+    - name: Debian
+      versions:
+        - squeeze
+        - wheezy
+  categories:
+    - development
+    - system
+
+dependencies: []
