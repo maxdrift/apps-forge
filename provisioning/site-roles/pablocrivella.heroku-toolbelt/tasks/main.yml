@@ -1,0 +1,20 @@
+---
+- name: install heroku apt key
+  apt_key: url='https://toolbelt.heroku.com/apt/release.key' state=present
+
+- name: install heroku apt repo
+  apt_repository: >
+    repo='deb http://toolbelt.heroku.com/ubuntu ./'
+    state=present
+    update_cache=yes
+
+- name: install heroku-toolbelt
+  apt: name=heroku-toolbelt state=present
+
+- name: install plugins
+  shell: bash -lc "heroku plugins:install {{ item[1] }}"
+  with_nested:
+    - heroku_toolbelt_users
+    - heroku_toolbelt_plugins
+  sudo: true
+  sudo_user: "{{ item[0].name }}"

@@ -10,6 +10,7 @@
     - ANXS.utilities
     - pablocrivella.nodejs
     - pablocrivella.rbenv
+    - pablocrivella.heroku-toolbelt
 
   post_tasks:
     - include: tasks/install_gem_dependencies.yml
