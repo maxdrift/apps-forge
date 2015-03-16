@@ -1,5 +1,7 @@
-pablocrivella.rbenv
 ANXS.mysql
+ANXS.nodejs
 ANXS.postgresql,v1.1.0
 ANXS.utilities
 DavidWittman.redis
+pablocrivella.rbenv
+pablocrivella.heroku-toolbelt
