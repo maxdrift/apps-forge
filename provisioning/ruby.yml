@@ -8,7 +8,7 @@
 
   roles:
     - ANXS.utilities
-    - pablocrivella.nodejs
+    - ANXS.nodejs
     - pablocrivella.rbenv
     - pablocrivella.heroku-toolbelt
 
