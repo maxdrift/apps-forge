@@ -1,11 +1,11 @@
 ---
-rbenv:
-  env: user
-  version: v0.4.0
-  global: 2.1.5
-  rubies:
+rbenv_env: user
+rbenv_version: v0.4.0
+rbenv_global: 2.2.1
+
+rbenv_rubies:
     - 2.1.5
-    - 2.2.0
+    - 2.2.1
 
 rbenv_users:
   - name: vagrant

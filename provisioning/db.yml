@@ -9,7 +9,7 @@
     - vars/postgresql.yml
 
   roles:
-    - ANXS.utilities
-    - DavidWittman.redis
     - ANXS.mysql
     - ANXS.postgresql
+    - ANXS.utilities
+    - DavidWittman.redis
