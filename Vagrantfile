@@ -32,12 +32,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ]
       },
       cpus: 1,
-      memory: 1024
+      memory: 512
+    },
+    js: {
+      debug: false,
+      folders: [],
+      ports: [],
+      networks: {
+        private: [
+          ip_address: '192.168.100.30'
+        ]
+      },
+      cpus: 1,
+      memory: 512
     }
   }
 
   boxes = {
     db:   'ubuntu/trusty32',
+    js:   'ubuntu/trusty32',
     ruby: 'ubuntu/trusty32'
   }
 

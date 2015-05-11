@@ -1,3 +1,10 @@
+## 1.0.8
+
+IMPROVEMENTS:
+
+- Add js box for nodejs projects.
+- Update to Ruby 2.1.6 and Ruby 2.2.2.
+
 ## 1.0.7
 
 CHANGES:

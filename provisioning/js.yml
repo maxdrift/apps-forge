@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/nvm.yml
+
+  roles:
+    - pablocrivella.nvm
