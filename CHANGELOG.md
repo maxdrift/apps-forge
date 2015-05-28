@@ -2,7 +2,8 @@
 
 BUG FIXES:
 
-- Use ANXS.nodejs v1.1.0
+- Upgrade to ANXS.nodejs v1.1.0
+- Upgrade to pablocrivella.rbenv v2.0.3
 
 ## 1.0.8
 
