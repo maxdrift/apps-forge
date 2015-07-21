@@ -12,7 +12,7 @@ postgresql_user_privileges:
     role_attr_flags: "SUPERUSER"
 
 postgresql_pg_hba_trust_hosts:
-  - ruby-devbox.local
+  - 0.0.0.0/0
 
 postgresql_listen_addresses:
   - '*'
