@@ -1,12 +1,10 @@
 ---
 rbenv_env: user
 rbenv_version: v0.4.0
-rbenv_global: 2.2.2
+rbenv_global: 2.2.3
 
 rbenv_rubies:
-  - 2.1.6
-  - 2.2.2
+  - 2.2.3
 
 rbenv_users:
-  - name: vagrant
-    home: /home/vagrant
+  - vagrant
