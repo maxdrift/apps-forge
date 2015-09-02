@@ -4,6 +4,6 @@ ANXS.postgresql,v1.2.1
 ANXS.timezone,v1.0.1
 ANXS.utilities,v1.0.4
 DavidWittman.redis,1.0.2
-pablocrivella.heroku-toolbelt,1.0.3
-pablocrivella.nvm,1.0.2
+pablocrivella.heroku-toolbelt,2.0.0
+pablocrivella.nvm,1.0.3
 pablocrivella.rbenv,3.0.0

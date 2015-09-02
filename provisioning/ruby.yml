@@ -10,7 +10,9 @@
     - ANXS.utilities
     - ANXS.nodejs
     - pablocrivella.rbenv
-    - pablocrivella.heroku-toolbelt
+    - role: pablocrivella.heroku-toolbelt
+      heroku_toolbelt_users:
+        - vagrant
 
   post_tasks:
     - include: tasks/install_gem_dependencies.yml
