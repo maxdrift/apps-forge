@@ -1,11 +1,10 @@
 ---
 nvm_env: user
-nvm_version: v0.24.0
+nvm_version: v0.29.0
 nvm_default_node_version: stable
 
 nvm_node_versions:
   - stable
-  - iojs-v2.0.1
 
 nvm_users:
   - vagrant
@@ -14,3 +13,4 @@ nvm_global_packages:
   - bower
   - ember-cli
   - strongloop
+  - sails

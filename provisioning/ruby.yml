@@ -6,6 +6,9 @@
   vars_files:
     - vars/rbenv.yml
 
+  pre_tasks:
+    - apt: update_cache=yes
+
   roles:
     - ANXS.utilities
     - ANXS.nodejs
