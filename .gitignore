@@ -3,3 +3,4 @@ provisioning/roles/*
 .idea/
 .vagrant/
 .vagrantuser
+.bundle/

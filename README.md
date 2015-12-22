@@ -4,19 +4,16 @@ Virtual Machines for Development.
 
 ## Requirements
 
-* [VirtualBox](https://www.virtualbox.org)
-* [Vagrant 1.6.5](http://vagrantup.com)
 * [Nugrant](https://github.com/maoueh/nugrant)
+* [Vagrant 1.8.0](http://vagrantup.com)
 * [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
-* [Vagrant Triggers](https://github.com/emyl/vagrant-triggers)
-* [Ansible 1.8.2](http://www.ansible.com)
+* [VirtualBox](https://www.virtualbox.org)
 
 ## How To Install The Plugins
 
 ```bash
 host $ vagrant plugin install nugrant
 host $ vagrant plugin install vagrant-hostmanager
-host $ vagrant plugin install vagrant-triggers
 ```
 
 ## Available Boxes
@@ -24,8 +21,8 @@ host $ vagrant plugin install vagrant-triggers
 ### db:
 
 **OS:** Ubunty 14.04  
-**Hostname:** db-devbox.local  
-**Default Ip:** 192.168.100.10
+**Hostname:** db
+**Default Ip:** 192.168.100.101
 
 **Stack**
 
@@ -37,14 +34,25 @@ host $ vagrant plugin install vagrant-triggers
 ### ruby:
 
 **OS:** Ubuntu 14.04  
-**Hostname:** ruby-devbox.local  
-**Default Ip:** 192.168.100.20
+**Hostname:** ruby
+**Default Ip:** 192.168.100.102
 
 **Stack**
 
 - Utilities from https://github.com/anxs/utilities
-- rbenv with ruby 2.1.5
+- rbenv with ruby 2.2.3
 - nodejs
+
+### js:
+
+**OS:** Ubuntu 14.04  
+**Hostname:** js
+**Default Ip:** 192.168.100.103
+
+**Stack**
+
+- Utilities from https://github.com/anxs/utilities
+- nvm with latest stable nodejs
 
 ## How to Build the Virtual Machines
 

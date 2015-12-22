@@ -6,5 +6,10 @@ rbenv_global: 2.2.3
 rbenv_rubies:
   - 2.2.3
 
+rbenv_default_gems:
+  - bundler
+  - mailcatcher
+  - pry
+
 rbenv_users:
   - vagrant

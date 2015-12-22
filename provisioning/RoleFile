@@ -1,9 +1,9 @@
-ANXS.mysql,v1.0.3
+ANXS.mysql,v1.1.0
 ANXS.nodejs,v1.1.0
-ANXS.postgresql,v1.2.1
-ANXS.timezone,v1.0.1
+ANXS.postgresql,v1.2.2
+ANXS.timezone,v1.0.2
 ANXS.utilities,v1.0.4
-DavidWittman.redis,1.0.2
+DavidWittman.redis,1.0.6
 pablocrivella.heroku-toolbelt,2.0.0
-pablocrivella.nvm,1.0.3
+pablocrivella.nvm,1.0.4
 pablocrivella.rbenv,3.0.0

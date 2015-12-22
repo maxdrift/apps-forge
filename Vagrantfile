@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ports: [],
       networks: {
         private: [
-          ip_address: '192.168.100.10'
+          ip_address: '192.168.100.100'
         ]
       },
       cpus: 1,
@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ports: [],
       networks: {
         private: [
-          ip_address: '192.168.100.20'
+          ip_address: '192.168.100.101'
         ]
       },
       cpus: 1,
@@ -40,7 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ports: [],
       networks: {
         private: [
-          ip_address: '192.168.100.30'
+          ip_address: '192.168.100.102'
         ]
       },
       cpus: 1,
@@ -55,13 +55,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   }
 
   config.vm.provision :hostmanager
-
-  config.vm.provision :trigger, stdout: true do |trigger|
-    trigger.fire do
-      info 'Installing Ansible Roles'
-      run 'provisioning/./install-roles.sh'
-    end
-  end
 
   config.user.each do |node_id, node_config|
     config.vm.define node_id do |node|
@@ -80,16 +73,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
 
       node.vm.provider :virtualbox do |vb|
-        vb.name = "#{node_id}-devbox"
+        vb.name = node_id.to_s
         vb.cpus = node_config.cpus
         vb.memory = node_config.memory
       end
 
-      node.vm.hostname = "#{node_id}-devbox.local"
+      node.vm.hostname = node_id.to_s
 
-      node.vm.provision :ansible do |ansible|
-        ansible.playbook = "provisioning/#{node_id}.yml"
-        ansible.verbose  = 'vvv' if node_config.debug == true
+      node.vm.provision :ansible_local do |ansible|
+        ansible.galaxy_role_file = 'provisioning/RoleFile'
+        ansible.galaxy_roles_path = 'provisioning/roles'
+        ansible.install = true
+        ansible.limit = node_id
+        ansible.playbook = 'provisioning/playbook.yml'
+        ansible.verbose  = 'vvvv' if node_config.debug == true
       end
     end
   end

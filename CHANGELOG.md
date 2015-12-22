@@ -1,9 +1,20 @@
-## 1.0.9 UNRELEASED
+## 2.0.0
 
-BUG FIXES:
+BREAKING CHANGES:
 
-- Upgrade to ANXS.nodejs v1.1.0
-- Upgrade to pablocrivella.rbenv v2.0.3
+- Require Vagrant 1.8.0
+
+IMPROVEMENTS:
+
+- Switch to ansible-local provisioner (no more need for Ansible on host machine)
+- Use new ansible-galaxy support in Vagrant 1.8.0
+- Upgrade Roles
+- Remove dependency of Vagrant Triggers plugin
+- Remove dependency of Ansible on host machine
+
+CHANGES:
+
+- Rename boxes and change private ips
 
 ## 1.0.8
 
