@@ -1,3 +1,21 @@
+## 2.0.0
+
+BREAKING CHANGES:
+
+- Require Vagrant 1.8.0
+
+IMPROVEMENTS:
+
+- Switch to ansible-local provisioner (no more need for Ansible on host machine)
+- Use new ansible-galaxy support in Vagrant 1.8.0
+- Upgrade Roles
+- Remove dependency of Vagrant Triggers plugin
+- Remove dependency of Ansible on host machine
+
+CHANGES:
+
+- Rename boxes and change private ips
+
 ## 1.0.8
 
 IMPROVEMENTS:

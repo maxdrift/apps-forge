@@ -8,3 +8,4 @@
     - libsqlite3-dev
     - libqtwebkit-dev
     - libqt4-dev
+    - imagemagick

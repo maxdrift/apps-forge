@@ -1,0 +1,53 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+
+  pre_tasks:
+    - apt: update_cache=yes
+
+  roles:
+    - ANXS.utilities
+
+- hosts: db
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/redis.yml
+    - vars/mysql.yml
+    - vars/postgresql.yml
+
+  roles:
+    - ANXS.mysql
+    - ANXS.postgresql
+    - ANXS.utilities
+    - DavidWittman.redis
+
+- hosts: js
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/nvm.yml
+
+  roles:
+    - pablocrivella.nvm
+
+- hosts: ruby
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+    - vars/rbenv.yml
+
+  roles:
+    - ANXS.utilities
+    - ANXS.nodejs
+    - pablocrivella.rbenv
+    - role: pablocrivella.heroku-toolbelt
+      heroku_toolbelt_users:
+        - vagrant
+
+  post_tasks:
+    - include: tasks/install_gem_dependencies.yml
