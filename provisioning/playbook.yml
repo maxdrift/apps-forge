@@ -21,7 +21,6 @@
   roles:
     - ANXS.mysql
     - ANXS.postgresql
-    - ANXS.utilities
     - DavidWittman.redis
 
 - hosts: js
@@ -42,7 +41,6 @@
     - vars/rbenv.yml
 
   roles:
-    - ANXS.utilities
     - ANXS.nodejs
     - pablocrivella.rbenv
     - role: pablocrivella.heroku-toolbelt
