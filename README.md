@@ -20,7 +20,7 @@ host $ vagrant plugin install vagrant-hostmanager
 
 ### db:
 
-**OS:** Ubunty 14.04  
+**OS:** Ubuntu 14.04  
 **Hostname:** db
 **Default Ip:** 192.168.100.101
 
@@ -40,7 +40,7 @@ host $ vagrant plugin install vagrant-hostmanager
 **Stack**
 
 - Utilities from https://github.com/anxs/utilities
-- rbenv with ruby 2.2.3
+- rbenv with ruby 2.2.4 and 2.3.0
 - nodejs
 
 ### js:
