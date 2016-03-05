@@ -1,6 +1,6 @@
 ---
 nvm_env: user
-nvm_version: v0.29.0
+nvm_version: v0.31.0
 nvm_default_node_version: stable
 
 nvm_node_versions:
